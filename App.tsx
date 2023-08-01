@@ -1,18 +1,13 @@
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Navigation } from './src/navigation';
-import { PaperProvider, configureFonts } from 'react-native-paper';
-import { fontConfig } from './src/themes';
+import { ThemeProvider } from './src/context/ThemeContext';
 
 function App(): JSX.Element {
-    const theme = {
-        fonts: configureFonts({ config: fontConfig })
-    };
-
     return (
         <SafeAreaProvider>
-            <PaperProvider theme={theme}>
+            <ThemeProvider>
                 <Navigation />
-            </PaperProvider>
+            </ThemeProvider>
         </SafeAreaProvider>
     );
 }

@@ -78,6 +78,7 @@ module.exports = {
       'react/jsx-no-useless-fragment': 2,
       'react/require-default-props': [1, { ignoreFunctionalComponents: true, forbidDefaultForRequired: false }],
       'react-hooks/rules-of-hooks': 2,
+      "react-hooks/exhaustive-deps": 1,
       '@typescript-eslint/member-ordering': [2, { default: ['field'] }],
       '@typescript-eslint/no-empty-interface': 0,
       '@typescript-eslint/no-explicit-any': 2,

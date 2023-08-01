@@ -4,9 +4,12 @@ import { RootStackParamList } from '../../navigation';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Text } from 'react-native-paper';
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
 
 export const HomeScreen = () => {
     const { navigate } = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+    const { themeMode, toggleTheme } = useContext(ThemeContext);
 
     return (
         <SafeAreaView>
@@ -16,6 +19,8 @@ export const HomeScreen = () => {
             <Text variant="headlineSmall">Settings</Text>
             <Text variant="titleLarge">Now playing</Text>
             <Text variant="titleMedium">The flash</Text>
+            <Text variant="bodyMedium">{themeMode}</Text>
+            <Button title="Toggle theme" onPress={toggleTheme} />
             <Button title="Details Screen" onPress={() => navigate('DetailsScreen')} />
         </SafeAreaView>
     );
