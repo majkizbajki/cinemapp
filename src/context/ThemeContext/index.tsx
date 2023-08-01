@@ -2,6 +2,7 @@ import { FC, ReactNode, createContext, useEffect, useMemo, useState } from 'reac
 import { PaperProvider, configureFonts } from 'react-native-paper';
 import { DarkTheme, LightTheme, fontConfig } from '../../themes';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useLanguage } from '../../i18n/useLanguage';
 
 interface IThemeContext {
     themeMode: 'light' | 'dark';
@@ -20,8 +21,11 @@ interface IThemeProvider {
 export const ThemeProvider: FC<IThemeProvider> = ({ children }: IThemeProvider) => {
     const [variant, setVariant] = useState<'light' | 'dark'>('light');
 
+    const { getDeviceLanguage } = useLanguage();
+
     useEffect(() => {
         checkLocalThemeMode();
+        getDeviceLanguage();
     }, []);
 
     const toggleTheme = async () => {
