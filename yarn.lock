@@ -2041,6 +2041,11 @@
   resolved "https://registry.npmjs.org/@types/stack-utils/-/stack-utils-2.0.1.tgz"
   integrity sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==
 
+"@types/tinycolor2@^1.4.3":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@types/tinycolor2/-/tinycolor2-1.4.3.tgz#ed4a0901f954b126e6a914b4839c77462d56e706"
+  integrity sha512-Kf1w9NE5HEgGxCRyIcRXR/ZYtDv0V8FVPtYHwLxl0O+maGX0erE77pQlD0gpP+/KByMZ87mOA79SjifhSB3PjQ==
+
 "@types/use-sync-external-store@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@types/use-sync-external-store/-/use-sync-external-store-0.0.3.tgz#b6725d5f4af24ace33b36fafd295136e75509f43"
@@ -5941,10 +5946,10 @@ react-native-paper@^5.9.1:
     patch-package "^7.0.0"
     use-latest-callback "^0.1.5"
 
-react-native-reanimated@3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.3.0.tgz#80f9d58e28fddf62fe4c1bc792337b8ab57936ab"
-  integrity sha512-LzfpPZ1qXBGy5BcUHqw3pBC0qSd22qXS3t8hWSbozXNrBkzMhhOrcILE/nEg/PHpNNp1xvGOW8NwpAMF006roQ==
+react-native-reanimated@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.4.1.tgz#3518f4fbe716423a4361dfd4a2276c9f9c832a05"
+  integrity sha512-UjEBbWloCoUB/fkehj9GWAhuvfUx2BLYkQ3rP7+nVMJ5K5Ck1K6XFEBGfYdz4ttCBoyTSuzrPxe2XxJl3yRSdA==
   dependencies:
     "@babel/plugin-transform-object-assign" "^7.16.7"
     "@babel/preset-typescript" "^7.16.7"
@@ -6715,6 +6720,11 @@ through2@^2.0.1:
   dependencies:
     readable-stream "~2.3.6"
     xtend "~4.0.1"
+
+tinycolor2@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.6.0.tgz#f98007460169b0263b97072c5ae92484ce02d09e"
+  integrity sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==
 
 titleize@^3.0.0:
   version "3.0.0"

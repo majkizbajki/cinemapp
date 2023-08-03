@@ -3,6 +3,7 @@ import { Navigation } from './src/navigation';
 import { ThemeProvider } from './src/context/ThemeContext';
 import { Provider } from 'react-redux';
 import './src/i18n/i18n';
+import 'react-native-reanimated';
 import { store } from './src/app/store';
 
 function App(): JSX.Element {
