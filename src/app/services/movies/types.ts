@@ -31,7 +31,7 @@ export interface IMovies {
 // Response
 
 export interface IMoviesResponse {
-    movies: Array<{
+    results: Array<{
         backdrop_path: string;
         id: number;
         popularity: number;

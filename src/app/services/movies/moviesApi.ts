@@ -5,7 +5,7 @@ import i18n, { Locales } from '../../../i18n/i18n';
 
 const transformQueryResponse = (response: IMoviesResponse): IMovies => {
     const movies: IMovie[] = [];
-    for (const item of response.movies) {
+    for (const item of response.results) {
         movies.push({
             backdropPath: item.backdrop_path,
             id: item.id,

@@ -1,1 +1,12 @@
-{}
+{
+    "movieDetails": {
+        "genre": "Genre",
+        "popularRank": "Number #{{number}} on the POPULAR list today",
+        "productionCountry": "Production country",
+        "topRatedRank": "Number #{{number}} on the TOP RATED list today",
+        "upcomingRank": "Number #{{number}} on the UPCOMING list today"
+    },
+    "errors": {
+        "error": "Error"
+    }
+}

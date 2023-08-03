@@ -6,7 +6,9 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export type RootStackParamList = {
     MainScreen: undefined;
-    DetailsScreen: undefined;
+    DetailsScreen: {
+        movieId: number;
+    };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -15,7 +17,10 @@ export const Navigation = () => {
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>
             <NavigationContainer>
-                <Stack.Navigator initialRouteName="MainScreen" screenOptions={{ headerShown: false }}>
+                <Stack.Navigator
+                    initialRouteName="MainScreen"
+                    screenOptions={{ headerShown: false }}
+                >
                     <Stack.Screen name="MainScreen" component={HomeScreen} />
                     <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
                 </Stack.Navigator>

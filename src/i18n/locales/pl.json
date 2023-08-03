@@ -1,1 +1,12 @@
-{}
+{
+    "movieDetails": {
+        "genres": "Gatunek",
+        "popularRank": "Numer #{{number}} na liście POPULARNE dzisiaj",
+        "productionCountries": "Kraj produkcji",
+        "topRatedRank": "Numer #{{number}} na liście NAJWYŻEJ OCENIANE dzisiaj",
+        "upcomingRank": "Numer #{{number}} na liście NADCHODZĄCE dzisiaj"
+    },
+    "errors": {
+        "error": "Błąd"
+    }
+}
