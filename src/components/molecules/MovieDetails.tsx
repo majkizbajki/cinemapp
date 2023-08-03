@@ -22,7 +22,6 @@ export const MovieDetails = ({
 }: IMovieDetailsProps) => {
     const { colors } = useTheme();
     const style = styles(colors);
-    console.log(isRank);
 
     return (
         <View style={{ ...style.container, marginTop: isRank ? 0 : 24 }}>
