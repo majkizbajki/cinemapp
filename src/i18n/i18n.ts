@@ -28,3 +28,8 @@ i18n.use(initReactI18next).init({
 });
 
 export default i18n;
+
+export enum Locales {
+    en = 'en-GB',
+    pl = 'pl-PL'
+}
