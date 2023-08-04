@@ -7,7 +7,7 @@ const transformQueryResponse = (response: IMoviesResponse): IMovies => {
     const movies: IMovie[] = [];
     for (const item of response.results) {
         movies.push({
-            backdropPath: item.backdrop_path,
+            posterPath: item.poster_path,
             id: item.id,
             popularity: item.popularity,
             title: item.title,
@@ -120,7 +120,7 @@ export const moviesApi = api.injectEndpoints({
                 ...result
             }: IMovieDetailsResponse) => {
                 return {
-                    backdropPath: result.backdrop_path,
+                    posterPath: result.poster_path,
                     genres: result.genres.map(genre => genre.name),
                     id,
                     overview,
@@ -133,13 +133,14 @@ export const moviesApi = api.injectEndpoints({
             },
             providesTags: ['Movie']
         }),
-        getSearchedMovies: builder.query<IMovies, string>({
-            query: searchQuery => ({
-                url: 'movie/upcoming',
+        getSearchedMovies: builder.query<IMovies, { page: number; query?: string }>({
+            query: ({ page, query }) => ({
+                url: 'search/movie',
                 params: {
                     api_key: Config.API_KEY,
                     language: Locales[i18n.language as keyof typeof Locales],
-                    query: searchQuery
+                    query,
+                    page
                 }
             }),
             transformResponse: (response: IMoviesResponse) => {

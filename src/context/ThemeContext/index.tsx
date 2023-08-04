@@ -6,7 +6,7 @@ import { useLanguage } from '../../i18n/useLanguage';
 
 interface IThemeContext {
     themeMode: 'light' | 'dark';
-    toggleTheme: () => void;
+    toggleTheme: (mode: 'light' | 'dark') => void;
 }
 
 export const ThemeContext = createContext<IThemeContext>({
@@ -28,10 +28,10 @@ export const ThemeProvider: FC<IThemeProvider> = ({ children }: IThemeProvider) 
         getDeviceLanguage();
     }, []);
 
-    const toggleTheme = async () => {
+    const toggleTheme = async (mode: 'light' | 'dark') => {
         try {
-            await AsyncStorage.setItem('theme', variant === 'dark' ? 'light' : 'dark');
-            setVariant(state => (state === 'dark' ? 'light' : 'dark'));
+            await AsyncStorage.setItem('theme', mode);
+            setVariant(mode);
         } catch (e) {
             // TODO
             // Add error
@@ -40,9 +40,9 @@ export const ThemeProvider: FC<IThemeProvider> = ({ children }: IThemeProvider) 
 
     const checkLocalThemeMode = async () => {
         try {
-            const deviceScheme = await AsyncStorage.getItem('deviceTheme');
+            const deviceScheme = await AsyncStorage.getItem('theme');
             if (deviceScheme === 'dark') {
-                toggleTheme();
+                toggleTheme('dark');
             }
         } catch {
             // Do nothing

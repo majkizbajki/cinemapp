@@ -6,6 +6,7 @@ import { IMovies } from './types';
 interface IMovieState {
     nowPlayingMovies: IMovies;
     popularMovies: IMovies;
+    searchedMovies: IMovies;
     topRatedMovies: IMovies;
     upcomingMovies: IMovies;
 }
@@ -16,6 +17,10 @@ const initialState: IMovieState = {
         loadedPages: 0
     },
     popularMovies: {
+        movies: [],
+        loadedPages: 0
+    },
+    searchedMovies: {
         movies: [],
         loadedPages: 0
     },
@@ -70,11 +75,25 @@ const moviesSlice = createSlice({
                 };
             }
         );
+        builder.addMatcher(
+            moviesApi.endpoints.getSearchedMovies.matchFulfilled,
+            (state, { payload }) => {
+                state.searchedMovies = {
+                    movies:
+                        payload.loadedPages > 1
+                            ? [...state.searchedMovies.movies, ...payload.movies]
+                            : payload.movies,
+                    loadedPages: payload.loadedPages,
+                    query: payload.query
+                };
+            }
+        );
     }
 });
 
 export const selectNowPlayingMovies = (state: RootState) => state.movies.nowPlayingMovies;
 export const selectPopularMovies = (state: RootState) => state.movies.popularMovies;
+export const selectSearchedMovies = (state: RootState) => state.movies.searchedMovies;
 export const selectTopRatedMovies = (state: RootState) => state.movies.topRatedMovies;
 export const selectUpcomingMovies = (state: RootState) => state.movies.upcomingMovies;
 

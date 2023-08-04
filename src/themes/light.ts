@@ -8,6 +8,6 @@ export const LightTheme: MD3Theme = {
         primary: '#161C30',
         secondary: '#FC094B',
         shadow: '#E2E2E2',
-        surface: '#BABABA'
+        backdrop: '#2C3656'
     }
 };
