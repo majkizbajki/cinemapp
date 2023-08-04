@@ -1,4 +1,17 @@
 {
+    "errors": {
+        "error": "Error"
+    },
+    "home": {
+        "emptyList": "There's no data to display",
+        "nowPlaying": "Now playing",
+        "popular": "Popular",
+        "search": "Search...",
+        "searchMessage": "Start typing to search movies...",
+        "showMore": "Show more",
+        "topRated": "Top rated",
+        "upcoming": "Upcoming"
+    },
     "movieDetails": {
         "genre": "Genre",
         "popularRank": "Number #{{number}} on the POPULAR list today",
@@ -6,7 +19,9 @@
         "topRatedRank": "Number #{{number}} on the TOP RATED list today",
         "upcomingRank": "Number #{{number}} on the UPCOMING list today"
     },
-    "errors": {
-        "error": "Error"
+    "settings": {
+        "language": "Language",
+        "settings": "Settings",
+        "theme": "Theme"
     }
 }

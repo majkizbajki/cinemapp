@@ -1,4 +1,17 @@
 {
+    "errors": {
+        "error": "Błąd"
+    },
+    "home": {
+        "emptyList": "Brak danych do wyświetlenia",
+        "nowPlaying": "Teraz w kinach",
+        "popular": "Popularne",
+        "search": "Wyszukaj...",
+        "searchMessage": "Wpisz frazę, aby wyszukać...",
+        "showMore": "Pokaż więcej",
+        "topRated": "Najwyżej oceniane",
+        "upcoming": "Nadchodzące"
+    },    
     "movieDetails": {
         "genres": "Gatunek",
         "popularRank": "Numer #{{number}} na liście POPULARNE dzisiaj",
@@ -6,7 +19,9 @@
         "topRatedRank": "Numer #{{number}} na liście NAJWYŻEJ OCENIANE dzisiaj",
         "upcomingRank": "Numer #{{number}} na liście NADCHODZĄCE dzisiaj"
     },
-    "errors": {
-        "error": "Błąd"
+    "settings": {
+        "language": "Język",
+        "settings": "Ustawienia",
+        "theme": "Motyw"
     }
 }

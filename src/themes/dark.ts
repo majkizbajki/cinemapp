@@ -8,6 +8,6 @@ export const DarkTheme: MD3Theme = {
         primary: '#E8E8E8',
         secondary: '#FC094B',
         shadow: '#2C3656',
-        surface: '#BABABA'
+        backdrop: '#FC094B'
     }
 };

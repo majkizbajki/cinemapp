@@ -28,8 +28,17 @@ type MD3Type = {
 export const fontConfig: Record<string, MD3Type> = {
     // Medium 500
     // (Figma: Medium 8)
+    labelLarge: {
+        fontFamily: Platform.OS === 'android' ? 'Poppins-Medium' : 'Poppins',
+        fontWeight: Platform.OS === 'android' ? undefined : '500',
+        fontSize: 14,
+        letterSpacing: 0.1,
+        lineHeight: 20
+    },
+    // Medium 500
+    // (Figma: Medium 8)
     labelMedium: {
-        fontFamily: Platform.OS === 'android' ? 'Poppins-Regular' : 'Poppins',
+        fontFamily: Platform.OS === 'android' ? 'Poppins-Medium' : 'Poppins',
         fontWeight: Platform.OS === 'android' ? undefined : '500',
         fontSize: 11,
         letterSpacing: 0.5,

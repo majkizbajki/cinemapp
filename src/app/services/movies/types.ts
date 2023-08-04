@@ -9,7 +9,7 @@ export type ProductionCountry = {
 };
 
 export interface IMovie {
-    backdropPath: string;
+    posterPath: string;
     id: number;
     popularity: number;
     title: string;
@@ -26,13 +26,14 @@ export interface IMovieDetails extends IMovie {
 export interface IMovies {
     movies: IMovie[];
     loadedPages: number;
+    query?: string;
 }
 
 // Response
 
 export interface IMoviesResponse {
     results: Array<{
-        backdrop_path: string;
+        poster_path: string;
         id: number;
         popularity: number;
         title: string;
@@ -43,7 +44,7 @@ export interface IMoviesResponse {
 }
 
 export interface IMovieDetailsResponse {
-    backdrop_path: string;
+    poster_path: string;
     genres: Genre[];
     id: number;
     overview: string;

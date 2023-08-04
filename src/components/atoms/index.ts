@@ -1,2 +1,4 @@
 export * from './ElevatedButton';
-export * from './MovieOverview';
+export * from './LanguageButton';
+export * from './VotesAverage';
+export * from './VotesAmount';
