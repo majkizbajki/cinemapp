@@ -14,12 +14,13 @@ import { HomePageMoviesList } from '../../components/templates';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import { useTranslation } from 'react-i18next';
-import { MoviesList } from '../../components/organism';
+import { MoviesList, Settings } from '../../components/organism';
 import { useAppSelector } from '../../app/hooks';
 import { selectSearchedMovies } from '../../app/services/movies/moviesSlice';
 
 export const HomeScreen = () => {
     const [isSearching, setIsSearching] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const { t } = useTranslation();
     const { movies } = useAppSelector(selectSearchedMovies);
@@ -44,6 +45,10 @@ export const HomeScreen = () => {
         };
     });
 
+    const toggleSheet = () => {
+        setIsOpen(state => (state = !state));
+    };
+
     return (
         <SafeAreaView style={style.screen}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -56,7 +61,7 @@ export const HomeScreen = () => {
                             }}
                         />
                         <Animated.View style={settingsButtonAnimatedStyle}>
-                            <TouchableOpacity style={style.settingsButton}>
+                            <TouchableOpacity style={style.settingsButton} onPress={toggleSheet}>
                                 <IoniconsIcon
                                     name="settings-outline"
                                     color={colors.primary}
@@ -72,6 +77,7 @@ export const HomeScreen = () => {
                         emptyListMessage={t('home.searchMessage')}
                         movies={movies}
                     />
+                    {isOpen && <Settings toggleSheet={toggleSheet} />}
                 </View>
             </TouchableWithoutFeedback>
         </SafeAreaView>
