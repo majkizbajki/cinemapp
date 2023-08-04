@@ -1,4 +1,4 @@
-# Dishes
+# CinemApp
 
 The project was completed as a recruitment task in React Native technology using Typescript. Its main goal was to create a simple mobile app where users can search for movies and check movie details. I used the TMDB (The Movie Database) API to manage the data. The libraries I used were mainly:
 
