@@ -5,12 +5,12 @@ import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 
 type VotesAmountSize = 'small' | 'large';
 
-export interface IVotesAmountProps {
+export interface VotesAmountProps {
     size: VotesAmountSize;
     votesAmount: number;
 }
 
-export const VotesAmount = ({ size, votesAmount }: IVotesAmountProps) => {
+export const VotesAmount = ({ size, votesAmount }: VotesAmountProps) => {
     const { colors } = useTheme();
     const style = styles(colors);
 

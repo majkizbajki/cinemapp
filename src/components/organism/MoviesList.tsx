@@ -7,7 +7,7 @@ import {
     ListRenderItem,
     TouchableOpacity
 } from 'react-native';
-import { IMovie } from '../../app/services/movies/types';
+import { Movie } from '../../app/services/movies/types';
 import { Text, useTheme } from 'react-native-paper';
 import { MD3Colors } from 'react-native-paper/lib/typescript/src/types';
 import { MovieTile, MovieTileSize } from '../molecules';
@@ -17,14 +17,14 @@ import { RootStackParamList } from '../../navigation';
 import { useNavigation } from '@react-navigation/native';
 import { CategoryScreenTypes } from '../../navigation/types';
 
-interface IMovieListProps {
+interface MovieListProps {
     size: MovieTileSize;
     category?: CategoryScreenTypes;
     emptyListMessage?: string;
     hide?: boolean;
     horizontal?: boolean;
     label?: string;
-    movies?: IMovie[];
+    movies?: Movie[];
     handleLoadMoreMovies?: () => void;
 }
 
@@ -38,14 +38,14 @@ export const MoviesList = React.memo(
         label,
         movies,
         handleLoadMoreMovies
-    }: IMovieListProps) => {
+    }: MovieListProps) => {
         const { t } = useTranslation();
         const { navigate } = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
         const { colors } = useTheme();
         const style = styles(colors);
 
-        const renderMovieItem: ListRenderItem<IMovie> = useCallback(
+        const renderMovieItem: ListRenderItem<Movie> = useCallback(
             ({ item }) => {
                 return (
                     <MovieTile
@@ -61,7 +61,7 @@ export const MoviesList = React.memo(
             [size]
         );
 
-        const keyExtractor = useCallback((item: IMovie) => item.id.toString(), []);
+        const keyExtractor = useCallback((item: Movie) => item.id.toString(), []);
 
         return (
             <View style={{ ...style.container, display: hide ? 'none' : 'flex' }}>

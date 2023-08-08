@@ -2,9 +2,9 @@ import { StyleSheet, View } from 'react-native';
 import { VotesAmount, VotesAverage } from '../atoms';
 import { MD3Colors } from 'react-native-paper/lib/typescript/src/types';
 import { Text, useTheme } from 'react-native-paper';
-import { IMovieOverviewProps, MovieOverview } from '../molecules/MovieOverview';
+import { MovieOverviewProps, MovieOverview } from '../molecules/MovieOverview';
 
-interface IMovieDetailsProps extends IMovieOverviewProps {
+interface MovieDetailsProps extends MovieOverviewProps {
     title: string;
     votesAverage: number;
     votesAmount: number;
@@ -18,7 +18,7 @@ export const MovieDetails = ({
     title,
     votesAmount,
     votesAverage
-}: IMovieDetailsProps) => {
+}: MovieDetailsProps) => {
     const { colors } = useTheme();
     const style = styles(colors);
 

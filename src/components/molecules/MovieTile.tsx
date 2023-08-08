@@ -1,5 +1,5 @@
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { IVotesAmountProps, IVotesAverageProps, VotesAmount, VotesAverage } from '../atoms';
+import { VotesAmountProps, VotesAverageProps, VotesAmount, VotesAverage } from '../atoms';
 import Config from 'react-native-config';
 import { Text, useTheme } from 'react-native-paper';
 import { MD3Colors } from 'react-native-paper/lib/typescript/src/types';
@@ -9,7 +9,7 @@ import { RootStackParamList } from '../../navigation';
 
 export type MovieTileSize = 'small' | 'large';
 
-interface IMovieTileProps extends IVotesAmountProps, IVotesAverageProps {
+interface MovieTileProps extends VotesAmountProps, VotesAverageProps {
     id: number;
     imagePath: string;
     size: MovieTileSize;
@@ -23,7 +23,7 @@ export const MovieTile = ({
     size,
     votesAmount,
     votesAverage
-}: IMovieTileProps) => {
+}: MovieTileProps) => {
     const { colors } = useTheme();
     const style = styles(colors, size);
 

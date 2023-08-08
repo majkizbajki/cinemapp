@@ -4,12 +4,12 @@ import { useTheme } from 'react-native-paper';
 import { MD3Colors } from 'react-native-paper/lib/typescript/src/types';
 import { ThemeContext } from '../../context/ThemeContext';
 
-interface IThemeButtonProps {
+interface ThemeButtonProps {
     children: ReactNode;
     theme: 'light' | 'dark';
 }
 
-export const ThemeButton = ({ children, theme }: IThemeButtonProps) => {
+export const ThemeButton = ({ children, theme }: ThemeButtonProps) => {
     const { themeMode, toggleTheme } = useContext(ThemeContext);
 
     const { colors } = useTheme();

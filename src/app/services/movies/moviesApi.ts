@@ -1,10 +1,10 @@
 import Config from 'react-native-config';
 import { api } from '../api';
-import { IMovie, IMovieDetails, IMovieDetailsResponse, IMovies, IMoviesResponse } from './types';
+import { Movie, MovieDetails, MovieDetailsResponse, Movies, MoviesResponse } from './types';
 import i18n, { Locales } from '../../../i18n/i18n';
 
-const transformQueryResponse = (response: IMoviesResponse): IMovies => {
-    const movies: IMovie[] = [];
+const transformQueryResponse = (response: MoviesResponse): Movies => {
+    const movies: Movie[] = [];
     for (const item of response.results) {
         movies.push({
             posterPath: item.poster_path,
@@ -24,7 +24,7 @@ const transformQueryResponse = (response: IMoviesResponse): IMovies => {
 
 export const moviesApi = api.injectEndpoints({
     endpoints: builder => ({
-        getNowPlayingMovies: builder.query<IMovies, number>({
+        getNowPlayingMovies: builder.query<Movies, number>({
             query: page => ({
                 url: 'movie/now_playing',
                 params: {
@@ -33,7 +33,7 @@ export const moviesApi = api.injectEndpoints({
                     page
                 }
             }),
-            transformResponse: (response: IMoviesResponse) => {
+            transformResponse: (response: MoviesResponse) => {
                 return transformQueryResponse(response);
             },
             providesTags: result =>
@@ -44,7 +44,7 @@ export const moviesApi = api.injectEndpoints({
                       ]
                     : [{ type: 'NowPlaying', id: 'NOW-PLAYING-LIST' }]
         }),
-        getPopularMovies: builder.query<IMovies, number>({
+        getPopularMovies: builder.query<Movies, number>({
             query: page => ({
                 url: 'movie/popular',
                 params: {
@@ -53,7 +53,7 @@ export const moviesApi = api.injectEndpoints({
                     page
                 }
             }),
-            transformResponse: (response: IMoviesResponse) => {
+            transformResponse: (response: MoviesResponse) => {
                 return transformQueryResponse(response);
             },
             providesTags: result =>
@@ -64,7 +64,7 @@ export const moviesApi = api.injectEndpoints({
                       ]
                     : [{ type: 'Popular', id: 'POPULAR-LIST' }]
         }),
-        getTopRatedMovies: builder.query<IMovies, number>({
+        getTopRatedMovies: builder.query<Movies, number>({
             query: page => ({
                 url: 'movie/top_rated',
                 params: {
@@ -73,7 +73,7 @@ export const moviesApi = api.injectEndpoints({
                     page
                 }
             }),
-            transformResponse: (response: IMoviesResponse) => {
+            transformResponse: (response: MoviesResponse) => {
                 return transformQueryResponse(response);
             },
             providesTags: result =>
@@ -84,7 +84,7 @@ export const moviesApi = api.injectEndpoints({
                       ]
                     : [{ type: 'TopRated', id: 'TOP-RATED-LIST' }]
         }),
-        getUpcomingMovies: builder.query<IMovies, number>({
+        getUpcomingMovies: builder.query<Movies, number>({
             query: page => ({
                 url: 'movie/upcoming',
                 params: {
@@ -93,7 +93,7 @@ export const moviesApi = api.injectEndpoints({
                     page
                 }
             }),
-            transformResponse: (response: IMoviesResponse) => {
+            transformResponse: (response: MoviesResponse) => {
                 return transformQueryResponse(response);
             },
             providesTags: result =>
@@ -104,7 +104,7 @@ export const moviesApi = api.injectEndpoints({
                       ]
                     : [{ type: 'Upcoming', id: 'UPCOMING-LIST' }]
         }),
-        getMovieDetails: builder.query<IMovieDetails, number>({
+        getMovieDetails: builder.query<MovieDetails, number>({
             query: id => ({
                 url: `movie/${id}`,
                 params: {
@@ -118,7 +118,7 @@ export const moviesApi = api.injectEndpoints({
                 popularity,
                 title,
                 ...result
-            }: IMovieDetailsResponse) => {
+            }: MovieDetailsResponse) => {
                 return {
                     posterPath: result.poster_path,
                     genres: result.genres.map(genre => genre.name),
@@ -133,7 +133,7 @@ export const moviesApi = api.injectEndpoints({
             },
             providesTags: ['Movie']
         }),
-        getSearchedMovies: builder.query<IMovies, { page: number; query?: string }>({
+        getSearchedMovies: builder.query<Movies, { page: number; query?: string }>({
             query: ({ page, query }) => ({
                 url: 'search/movie',
                 params: {
@@ -143,7 +143,7 @@ export const moviesApi = api.injectEndpoints({
                     page
                 }
             }),
-            transformResponse: (response: IMoviesResponse) => {
+            transformResponse: (response: MoviesResponse) => {
                 return transformQueryResponse(response);
             },
             providesTags: result =>

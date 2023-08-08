@@ -8,11 +8,11 @@ import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import tinycolor from 'tinycolor2';
 import { useGetSearchedMoviesQuery } from '../../app/services/movies/moviesApi';
 
-interface ISearchBarProps {
+interface SearchBarProps {
     handlePress: (state: boolean) => void;
 }
 
-export const SearchBar = ({ handlePress }: ISearchBarProps) => {
+export const SearchBar = ({ handlePress }: SearchBarProps) => {
     const [isClicked, setIsClicked] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [requestQuery, setRequestQuery] = useState('');

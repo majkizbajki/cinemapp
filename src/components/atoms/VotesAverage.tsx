@@ -5,12 +5,12 @@ import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
 type VotesAverageSize = 'small' | 'large';
 
-export interface IVotesAverageProps {
+export interface VotesAverageProps {
     size: VotesAverageSize;
     votesAverage: number;
 }
 
-export const VotesAverage = ({ size, votesAverage }: IVotesAverageProps) => {
+export const VotesAverage = ({ size, votesAverage }: VotesAverageProps) => {
     const { colors } = useTheme();
     const style = styles(colors);
 

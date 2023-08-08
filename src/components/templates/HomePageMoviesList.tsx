@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { IMovie } from '../../app/services/movies/types';
+import { Movie } from '../../app/services/movies/types';
 import { MovieTileSize } from '../molecules';
 import { useAppSelector } from '../../app/hooks';
 import {
@@ -18,20 +18,20 @@ import {
 } from '../../app/services/movies/moviesApi';
 import { CategoryScreenTypes } from '../../navigation/types';
 
-interface IMoviesListItem {
+interface MoviesListItem {
     category?: CategoryScreenTypes;
     label: string;
-    movies: IMovie[];
+    movies: Movie[];
     size: MovieTileSize;
     horizontal: boolean;
     handleLoadMoreMovies?: () => void;
 }
 
-interface IHomePageMoviesListProps {
+interface HomePageMoviesListProps {
     hide: boolean;
 }
 
-export const HomePageMoviesList = ({ hide }: IHomePageMoviesListProps) => {
+export const HomePageMoviesList = ({ hide }: HomePageMoviesListProps) => {
     const { t } = useTranslation();
 
     const { movies: nowPlayingMovies, loadedPages: nowPlayingLoadedPages } =
@@ -48,7 +48,7 @@ export const HomePageMoviesList = ({ hide }: IHomePageMoviesListProps) => {
     useGetTopRatedMoviesQuery(1, { skip: topRatedLoadedPages > 1 });
     useGetUpcomingMoviesQuery(1, { skip: upcomingLoadedPages > 1 });
 
-    const listItems: IMoviesListItem[] = [
+    const listItems: MoviesListItem[] = [
         {
             category: 'nowPlaying',
             label: t('home.nowPlaying'),

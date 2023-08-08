@@ -5,12 +5,12 @@ import { Text, useTheme } from 'react-native-paper';
 import { MD3Colors } from 'react-native-paper/lib/typescript/src/types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-interface ILanguageButtonProps {
+interface LanguageButtonProps {
     language: keyof typeof Locales;
     title: string;
 }
 
-export const LanguageButton = ({ language, title }: ILanguageButtonProps) => {
+export const LanguageButton = ({ language, title }: LanguageButtonProps) => {
     const { i18n } = useTranslation();
 
     const { colors } = useTheme();

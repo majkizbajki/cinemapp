@@ -3,12 +3,12 @@ import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Text, useTheme } from 'react-native-paper';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 
-interface IErrorScreenProps {
+interface ErrorScreenProps {
     errorMessage: string;
     onPress: () => void;
 }
 
-export const ErrorScreen = ({ errorMessage, onPress }: IErrorScreenProps) => {
+export const ErrorScreen = ({ errorMessage, onPress }: ErrorScreenProps) => {
     const { t } = useTranslation();
     const { colors } = useTheme();
 

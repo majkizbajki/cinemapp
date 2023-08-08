@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../store';
 import { moviesApi } from './moviesApi';
-import { IMovies } from './types';
+import { Movies } from './types';
 
-interface IMovieState {
-    nowPlayingMovies: IMovies;
-    popularMovies: IMovies;
-    searchedMovies: IMovies;
-    topRatedMovies: IMovies;
-    upcomingMovies: IMovies;
+interface MovieState {
+    nowPlayingMovies: Movies;
+    popularMovies: Movies;
+    searchedMovies: Movies;
+    topRatedMovies: Movies;
+    upcomingMovies: Movies;
 }
 
-const initialState: IMovieState = {
+const initialState: MovieState = {
     nowPlayingMovies: {
         movies: [],
         loadedPages: 0

@@ -4,21 +4,21 @@ import { DarkTheme, LightTheme, fontConfig } from '../../themes';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useLanguage } from '../../i18n/useLanguage';
 
-interface IThemeContext {
+interface ThemeContext {
     themeMode: 'light' | 'dark';
     toggleTheme: (mode: 'light' | 'dark') => void;
 }
 
-export const ThemeContext = createContext<IThemeContext>({
+export const ThemeContext = createContext<ThemeContext>({
     themeMode: 'light',
     toggleTheme: () => {}
 });
 
-interface IThemeProvider {
+interface ThemeProvider {
     children: ReactNode;
 }
 
-export const ThemeProvider: FC<IThemeProvider> = ({ children }: IThemeProvider) => {
+export const ThemeProvider: FC<ThemeProvider> = ({ children }: ThemeProvider) => {
     const [variant, setVariant] = useState<'light' | 'dark'>('light');
 
     const { getDeviceLanguage } = useLanguage();

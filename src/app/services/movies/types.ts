@@ -8,7 +8,7 @@ export type ProductionCountry = {
     name: string;
 };
 
-export interface IMovie {
+export interface Movie {
     posterPath: string;
     id: number;
     popularity: number;
@@ -17,21 +17,21 @@ export interface IMovie {
     voteCount: number;
 }
 
-export interface IMovieDetails extends IMovie {
+export interface MovieDetails extends Movie {
     genres: string[];
     overview: string;
     productionCountries: string[];
 }
 
-export interface IMovies {
-    movies: IMovie[];
+export interface Movies {
+    movies: Movie[];
     loadedPages: number;
     query?: string;
 }
 
 // Response
 
-export interface IMoviesResponse {
+export interface MoviesResponse {
     results: Array<{
         poster_path: string;
         id: number;
@@ -43,7 +43,7 @@ export interface IMoviesResponse {
     page: number;
 }
 
-export interface IMovieDetailsResponse {
+export interface MovieDetailsResponse {
     poster_path: string;
     genres: Genre[];
     id: number;

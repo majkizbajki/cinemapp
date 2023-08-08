@@ -2,14 +2,14 @@ import { useTranslation } from 'react-i18next';
 import { ScrollView, StyleSheet } from 'react-native';
 import { Text } from 'react-native-paper';
 
-export interface IMovieOverviewProps {
+export interface MovieOverviewProps {
     genres: string[];
     isRank: boolean;
     overview: string;
     productionCountries: string[];
 }
 
-export const MovieOverview = ({ genres, overview, productionCountries }: IMovieOverviewProps) => {
+export const MovieOverview = ({ genres, overview, productionCountries }: MovieOverviewProps) => {
     const { t } = useTranslation();
 
     return (

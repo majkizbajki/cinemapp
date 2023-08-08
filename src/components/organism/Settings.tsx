@@ -5,11 +5,11 @@ import Animated, { SlideInDown, SlideOutDown } from 'react-native-reanimated';
 import tinycolor from 'tinycolor2';
 import { ThemeContainer } from '../molecules';
 
-interface ISettingsProps {
+interface SettingsProps {
     toggleSheet: () => void;
 }
 
-export const Settings = ({ toggleSheet }: ISettingsProps) => {
+export const Settings = ({ toggleSheet }: SettingsProps) => {
     const { colors } = useTheme();
     const style = styles(colors);
 
